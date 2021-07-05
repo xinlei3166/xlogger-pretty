@@ -137,17 +137,3 @@ export class Logger {
     this.log(msg, label, red, 5)
   }
 }
-
-// {
-//   level: 0,
-//   format: '[[label]] - [datetime] - [msg]'
-// }
-export const logger = new Logger()
-
-logger.log('log log log')
-logger.info('info info info')
-logger.debug('debug debug debug')
-logger.notice('notice notice notice')
-logger.warn('warn warn warn')
-logger.error('error error error')
-logger.success('success success success')
