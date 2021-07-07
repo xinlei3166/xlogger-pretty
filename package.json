@@ -18,6 +18,9 @@
   "homepage": "https://github.com/xinlei3166/xlogger-pretty",
   "author": "君惜",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
