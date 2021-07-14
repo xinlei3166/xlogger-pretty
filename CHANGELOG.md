@@ -1,3 +1,7 @@
+## [1.0.2](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.1...v1.0.2) (2021-07-14)
+
+
+
 ## [1.0.1](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.0...v1.0.1) (2021-07-07)
 
 
