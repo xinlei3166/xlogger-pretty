@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.4...v1.0.5) (2021-08-02)
+
+
+### Features
+
+* add msgColor prop ([59adeb6](https://github.com/xinlei3166/xlogger-pretty/commit/59adeb6dd1ac10601d24e848d52966d7d68cb374))
+
+
+
 ## [1.0.4](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.2...v1.0.4) (2021-08-02)
 
 
