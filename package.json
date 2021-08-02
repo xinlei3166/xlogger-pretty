@@ -1,6 +1,6 @@
 {
   "name": "xlogger-pretty",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A logger as beautiful and easy to use as the Python logging library.",
   "repository": {
     "type": "git",

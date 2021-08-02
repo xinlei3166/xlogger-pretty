@@ -1,8 +1,9 @@
-## [1.0.3](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.2...v1.0.3) (2021-08-02)
+## [1.0.4](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.2...v1.0.4) (2021-08-02)
 
 
 ### Features
 
+* options.level not required ([9296d64](https://github.com/xinlei3166/xlogger-pretty/commit/9296d646e21fa372247a02bf3ab9679afab57ed6))
 * support newline character '\n' ([76ac78b](https://github.com/xinlei3166/xlogger-pretty/commit/76ac78b9d7b3e3f35b3ded0e91a922b9ff2c2e6f))
 
 
