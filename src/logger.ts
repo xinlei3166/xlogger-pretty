@@ -21,7 +21,7 @@ export interface IObject {
 }
 
 export interface LoggerOptions extends IObject {
-  level: LevelString | LevelNumber
+  level?: LevelString | LevelNumber
   format?: string | null
   datetimeFormat?: string
 }
