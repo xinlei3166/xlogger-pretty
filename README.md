@@ -33,6 +33,12 @@ logger.success('success success success')
 
 
 
+## msgColor
+
+true: 彩色日志内容，false: 黑色日志内容，默认为true。
+
+
+
 ## Custom Display Format
 
 **Level**

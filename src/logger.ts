@@ -24,6 +24,7 @@ export interface LoggerOptions extends IObject {
   level?: LevelString | LevelNumber
   format?: string | null
   datetimeFormat?: string
+  msgColor?: boolean
 }
 
 export interface LoggerProps extends IObject {
@@ -45,12 +46,14 @@ export class Logger {
   public level: LevelString | LevelNumber = 0
   public format = '[[label]] [msg]'
   public datetimeFormat = 'YYYY-MM-DD HH:mm:ss'
+  public msgColor = true
 
   constructor(options?: LoggerOptions) {
     const opts = options ?? ({} as LoggerOptions)
     this.level = opts.level || this.level
     this.format = opts.format || this.format
     this.datetimeFormat = opts.datetimeFormat || this.datetimeFormat
+    this.msgColor = !!opts.msgColor
     if (!this.validFormat(this.format)) {
       throw error({ code: ERROR, msg: 'invalid format, such as [label] [msg]' })
     }
@@ -99,7 +102,7 @@ export class Logger {
       msg = msg?.replace(/^\n+/, '')
     }
     const props = {
-      label,
+      label: (color && color(label)) || label,
       msg,
       datetime: this.getCurrentDatetime()
     }
@@ -109,7 +112,7 @@ export class Logger {
     if (newlineCharacter) {
       msg = newlineCharacter + msg
     }
-    if (color) {
+    if (color && this.msgColor) {
       msg = color(msg)
     }
     console.log(msg)
