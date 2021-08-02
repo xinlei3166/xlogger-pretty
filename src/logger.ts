@@ -93,6 +93,11 @@ export class Logger {
   log(msg?: string, label = 'log', color?: Function, level?: LevelString | LevelNumber) {
     const levelNumber = this.convertLevel(level)
     if (levelNumber < this.level) return
+    let newlineCharacter = ''
+    if (msg?.startsWith('\n')) {
+      newlineCharacter = (msg.match(/^\n+/) || [])[0]
+      msg = msg?.replace(/^\n+/, '')
+    }
     const props = {
       label,
       msg,
@@ -100,6 +105,9 @@ export class Logger {
     }
     if (this.format) {
       msg = this.replaces(props)
+    }
+    if (newlineCharacter) {
+      msg = newlineCharacter + msg
     }
     if (color) {
       msg = color(msg)
