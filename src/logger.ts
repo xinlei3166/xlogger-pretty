@@ -132,7 +132,7 @@ export class Logger {
     if (color && this.msgColor) {
       msg = color(msg)
     }
-    this.text(msg)
+    console.log(msg)
   }
 
   text(msg?: string, color?: Function) {
@@ -183,18 +183,3 @@ export class Logger {
     this.log(msg, label, this.colors.error, 5)
   }
 }
-
-const logger = new Logger({
-  format: '[datetime] - [label] - [msg]',
-  wrapLabel: true,
-  uppercaseLabel: true,
-  msgColor: true
-})
-
-logger.log('This is a normal log.')
-logger.info('This is an info log.')
-logger.debug('This is a debug log.')
-logger.notice('This is a notice log.')
-logger.warn('This is a warn log.')
-logger.error('This is an error log.')
-logger.success('This is a success log.')
