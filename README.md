@@ -20,22 +20,50 @@ import Logger from 'xlogger-pretty'
 
 const logger = new Logger()
 
-logger.log('log log log')
-logger.info('info info info')
-logger.debug('debug debug debug')
-logger.notice('notice notice notice')
-logger.warn('warn warn warn')
-logger.error('error error error')
-logger.success('success success success')
+logger.log('This is a normal log.')
+logger.info('This is an info log.')
+logger.debug('This is a debug log.')
+logger.notice('This is a notice log.')
+logger.warn('This is a warn log.')
+logger.error('This is an error log.')
+logger.success('This is a success log.')
 ```
 
-![image-20210705172731476](https://tva1.sinaimg.cn/large/008i3skNly1gs67afsqymj30ue0cc3z6.jpg)
+![image-20210803160255373](https://tva1.sinaimg.cn/large/008i3skNly1gt3ntaxgg9j31bg0d0dh5.jpg)
 
 
 
-## msgColor
+## Options
 
-true: 彩色日志内容，false: 黑色日志内容，默认为true。
+| name           | type          | default             | desc                                                         |
+| -------------- | ------------- | ------------------- | ------------------------------------------------------------ |
+| level          | number/string | 0                   | 日志输出级别，可以数字或者字符串，详情见下面Level说明        |
+| format         | string        | [label] [msg]       | 自定义日志输出格式                                           |
+| datetimeFormat | string        | YYYY-MM-DD HH:mm:ss | 日志时间格式                                                 |
+| msgColor       | boolean       | false               | 日志内容是否为彩色                                           |
+| wrapLabel      | boolean       | false               | 日志标签是否被[]包裹                                         |
+| uppercaseLabel | boolean       | false               | 日志标签是否大写                                             |
+| colors         | object        | null                | 自定义日志标签输出颜色, { success: green }，颜色值取kolorist库中的颜色函数 (import { green } from 'kolorist') |
+
+
+
+## Custom Colors
+
+```js
+import { bgLightGreen, bgLightRed } from 'kolorist'
+
+const logger = new Logger({
+  colors: {
+    success: bgLightGreen,
+    error: bgLightRed
+  }
+})
+
+logger.error('This is an error log.')
+logger.success('This is a success log.')
+```
+
+![image-20210803161605590](https://tva1.sinaimg.cn/large/008i3skNly1gt3o70ebydj315o046dg6.jpg)
 
 
 
@@ -67,24 +95,24 @@ log方法不受级别控制
 
 **Example**
 
-[xxx] format占位标记， 实际运行会转换为真实的值。如需[]包裹，使用[[xxx]]。
+[xxx] format占位标记， 实际运行会转换为真实的值。
 
 ```js
 const logger = new Logger({
-  level: 3,
-  format: '[[label]] - [datetime] - [msg]'
+  format: '[datetime] - [label] - [msg]',
+  wrapLabel: true,
+  uppercaseLabel: true,
+  msgColor: true
 })
 
-logger.log('log log log')
-logger.info('info info info')
-logger.debug('debug debug debug')
-logger.notice('notice notice notice')
-logger.warn('warn warn warn')
-logger.error('error error error')
-logger.success('success success success')
+logger.log('This is a normal log.')
+logger.info('This is an info log.')
+logger.debug('This is a debug log.')
+logger.notice('This is a notice log.')
+logger.warn('This is a warn log.')
+logger.error('This is an error log.')
+logger.success('This is a success log.')
 ```
 
-![image-20210705172848025](https://tva1.sinaimg.cn/large/008i3skNly1gs67bprwayj30zg05iq3m.jpg)
-
-
+![image-20210803163726963](https://tva1.sinaimg.cn/large/008i3skNly1gt3ot87h9ij31hy0cgjuy.jpg)
 
