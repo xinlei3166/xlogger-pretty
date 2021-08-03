@@ -50,20 +50,29 @@ logger.success('This is a success log.')
 ## Custom Colors
 
 ```js
-import { bgLightGreen, bgLightRed } from 'kolorist'
+import * as colors from 'kolorist'
 
 const logger = new Logger({
+  uppercaseLabel: true,
   colors: {
-    success: bgLightGreen,
-    error: bgLightRed
+    info: colors.bgBlue,
+    debug: colors.bgMagenta,
+    notice: colors.bgCyan,
+    warn: colors.bgYellow,
+    error: colors.bgRed,
+    success: colors.bgGreen
   }
 })
 
+logger.info('This is an info log.')
+logger.debug('This is a debug log.')
+logger.notice('This is a notice log.')
+logger.warn('This is a warn log.')
 logger.error('This is an error log.')
 logger.success('This is a success log.')
 ```
 
-![image-20210803161605590](https://tva1.sinaimg.cn/large/008i3skNly1gt3o70ebydj315o046dg6.jpg)
+![image-20210803203120367](https://tva1.sinaimg.cn/large/008i3skNly1gt3vklf571j31fg0aqaba.jpg)
 
 
 

@@ -1,4 +1,4 @@
-import { green, magenta, cyan, blue, yellow, red, bgLightGreen, bgLightRed } from 'kolorist'
+import { green, magenta, cyan, blue, yellow, red } from 'kolorist'
 import { error } from 'exception-error'
 import dayjs from 'dayjs'
 
