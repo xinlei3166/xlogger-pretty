@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.5...v1.1.0) (2021-08-03)
+
+
+### Features
+
+* xlogger-pretty@1.1.0, support custom label color and custom format ([620196c](https://github.com/xinlei3166/xlogger-pretty/commit/620196c6e7b1c55e19525045d86090ca88056e2d))
+
+
+
 ## [1.0.5](https://github.com/xinlei3166/xlogger-pretty/compare/v1.0.4...v1.0.5) (2021-08-02)
 
 
