@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@master
       - name: Create Release for Tag
         id: release_tag
-        uses: yyx990803/release-tag@main
+        uses: yyx990803/release-tag@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
